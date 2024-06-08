@@ -1,7 +1,12 @@
-from django.forms import ModelForm
+from django.forms import modelformset_factory, ModelForm, Select, Textarea, TextInput, DateInput, NumberInput
 from .models import Saida
 
 class SaidaForm(ModelForm):
     class Meta:
         model = Saida
         fields = ['produto', 'quantidade', 'preco']
+        widgets = {
+            'produto': Select(attrs={'class' : 'input is-normal'}),
+            'quantidade': TextInput(attrs={'class': 'input is-normal'}),
+            'preco': NumberInput(attrs={'class': 'input is-normal'}),
+        }

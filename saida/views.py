@@ -20,13 +20,13 @@ def new_saida(request):
             form.cleaned_data['produto'].save_base()
             form.save()
             return redirect('saida:list_saida')
-        else:
-            template_name = 'new_saida.html'
-            context = {
-                'form': SaidaForm(),
-            }
-            return render(request, template_name, context)
-        
+    else:
+        template_name = 'new_saida.html'
+        context = {
+            'form': SaidaForm(),
+        }
+        return render(request, template_name, context)
+       
 def update_saida(request, pk):
     saida = Saida.objects.get(pk = pk)
     quantidade = saida.quantidade
@@ -42,7 +42,7 @@ def update_saida(request, pk):
         template_name = 'update_saida.html'
         context = {
             'form': SaidaForm(instance=saida),
-            'pk' : pk
+            'pk' : pk,
         }
         return render(request, template_name, context)
 

@@ -2,16 +2,16 @@
 
 {% block product %}
 
-<p>Saídas</p>
+<p class="title is-4">Saídas</p>
 <a class="button is-primary" href="{% url 'saida:new_saida' %}">Novo</a>
 
 <table class="table">
     <thead>
         <tr>
-            <th>Id</th>
+            <th>ID</th>
             <th>Produto</th>
             <th>Preço</th>
-            <th>Quantidade</th>
+            <th>Quant.</th>
             <th></th>
             <th></th>
         </tr>
@@ -24,7 +24,7 @@
             <td>{{ saida.preco }}</td>
             <td>{{ saida.quantidade }}</td>
             <td><a class="button is-primary" href="{% url 'saida:update_saida' saida.id %}">alterar</a></td>
-            <td><a class="button is-primary" href="{% url 'saida:delete_saida' saida.id %}">deletar</a></td>
+            <td><a class="button is-danger" href="{% url 'saida:delete_saida' saida.id %}">deletar</a></td>
         </tr>
         {% endfor %}
     </tbody>

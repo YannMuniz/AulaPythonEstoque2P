@@ -2,16 +2,16 @@
 
 {% block product %}
 
-<p>Entrada</p>
+<p class="title is-4">Entrada</p>
 <a class="button is-primary" href="{% url 'entrada:new_entrada' %}">Novo</a>
 
 <table class="table">
     <thead>
         <tr>
-            <th>Id</th>
+            <th>ID</th>
             <th>Produto</th>
             <th>Preço</th>
-            <th>Quantidade</th>
+            <th>Quant.</th>
             <th></th>
             <th></th>
         </tr>
@@ -24,7 +24,7 @@
             <td>{{ entrada.preco }}</td>
             <td>{{ entrada.quantidade }}</td>
             <td><a class="button is-primary" href="{% url 'entrada:update_entrada' entrada.id %}">alterar</a></td>
-            <td><a class="button is-primary" href="{% url 'entrada:delete_entrada' entrada.id %}">deletar</a></td>
+            <td><a class="button is-danger" href="{% url 'entrada:delete_entrada' entrada.id %}">deletar</a></td>
         </tr>
         {% endfor %}
     </tbody>

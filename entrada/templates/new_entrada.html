@@ -1,9 +1,11 @@
 {% extends 'base.html' %}
 {% block product %}
-<p>Nova Entrada</p>
+<p class="title is-4">Nova Entrada</p>
 <form action="{% url 'entrada:new_entrada' %}" method="POST">
     {% csrf_token %}
     {{ form.as_p }}
-    <button class="button is-primary" type="submit">salvar</button>
+    <div class="buttons has-addons is-right">
+        <button class="button is-success" type="submit">salvar</button>
+    </div>
 </form>
 {% endblock %}
